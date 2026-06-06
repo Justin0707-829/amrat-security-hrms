@@ -52,7 +52,7 @@ padding:8px;
 
 <div class="card">
 <h2>Dashboard</h2>
-<p>Total Employees : 100</p>
+<p>Total Employees : <span id="totalEmployees">0</span></p>
 <p>Total Sites : 10</p>
 <p>Present : 85</p>
 <p>Absent : 10</p>
@@ -109,6 +109,20 @@ const supabase = window.supabase.createClient(
 );
 
 console.log("Supabase Connected");
+  async function loadEmployees() {
+  const { data, error } = await supabase
+    .from('employees')
+    .select('*');
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  document.getElementById('totalEmployees').innerText = data.length;
+}
+
+loadEmployees();
 </script>
 </body>
 </html>
