@@ -109,7 +109,7 @@ const supabase = window.supabase.createClient(
 );
 
 console.log("Supabase Connected");
-  async function loadEmployees() {
+  async function loadEmployees() { 
   const { data, error } = await supabase
     .from('employees')
     .select('*');
