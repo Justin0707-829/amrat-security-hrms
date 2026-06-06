@@ -96,9 +96,19 @@ padding:8px;
 <p>ESIC Deduction</p>
 <p>Overtime Calculation</p>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 const SUPABASE_URL = "https://bsatnypvphgctesttmoe.supabase.co";
+
 const SUPABASE_KEY = "sb_publishable_9GLiiK1Hj4z4rtlu5Pcrig_Ie6VfFlD";
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+console.log("Supabase Connected");
 </script>
 </body>
 </html>
